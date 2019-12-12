@@ -1,0 +1,14 @@
+#box{
+	margin: auto;
+	width: 250px;
+}
+#box h3{
+	text-align: center;
+}
+form{
+	width: 50px;
+}
+#trai{
+	width: 50px;
+	float: left;
+}

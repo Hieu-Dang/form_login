@@ -1,1 +1,55 @@
-index
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+<div id="box">
+	<h3>đăng ký thành viên</h3>
+		<div id="trai">
+			<p>Họ tên *</p>
+			<p>Tên tài khoản *</p>
+			<p></p>
+			<p></p>
+			<p></p>
+			<p></p>
+			<p></p>
+		</div>
+	
+	<form>
+		 <input type="text" id="ho-ten">
+		 <input type="text" id="tai-khoan">
+		 <input type="text" id="mat-khau">
+		<input type="text">
+		<input type="text" id="email">
+		<input type="text" id="sdt">
+		<input type="text">
+		<input type="button" value="Đăng ký" onclick="checkuser()">
+	</form>
+</div>
+
+
+<script type="text/javascript">
+	function checkuser(){
+	var hoten = document.getElementById('ho-ten').value;
+	var tentk = document.getElementById('tai-khoan').value;
+	var matkhau = document.getElementById('mat-khau').value;
+	var email = document.getElementById('email').value;
+	var sdt = document.getElementById('sdt').value;
+
+	check_hoten =/^[a-zA-Z]{3,20}$/;
+	check_tentk =/^[a-zA-Z]$/;
+	check_sdt =/^[0-9]{11,12}$/;
+	if (check_hoten.test(hoten)) {
+		alert("OK");
+	} else {
+		alert("Không hợp lệ !!");
+	}
+
+}
+
+</script>
+</body>
+</html>
