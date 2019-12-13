@@ -7,48 +7,82 @@
 </head>
 <body>
 <div id="box">
+
 	<h3>đăng ký thành viên</h3>
-		<div id="trai">
-			<p>Họ tên *</p>
-			<p>Tên tài khoản *</p>
-			<p></p>
-			<p></p>
-			<p></p>
-			<p></p>
-			<p></p>
-		</div>
-	
-	<form>
-		 <input type="text" id="ho-ten">
-		 <input type="text" id="tai-khoan">
-		 <input type="text" id="mat-khau">
-		<input type="text">
-		<input type="text" id="email">
-		<input type="text" id="sdt">
-		<input type="text">
-		<input type="button" value="Đăng ký" onclick="checkuser()">
-	</form>
+<table>
+	<tr>
+		<td class="trai">Họ tên</td>
+		<td><input type="text" id="ho-ten"></td>
+		<td id="1"></td>
+	</tr>
+	<tr>
+		<td class="trai">Tên tài khoản *</td>
+		<td> <input type="text" id="tai-khoan"></td>
+		<td id="2"></td>
+	</tr>
+	<tr>
+		<td class="trai">Mật khẩu *</td>
+		<td> <input type="password" id="mat-khau"></td>
+		<td id="3"></td>
+	</tr>
+	<tr>
+		<td class="trai">Nhập lại mật khẩu</td>
+		<td><input type="password" id="re-pass"></td>
+		<td id="4"></td>
+	</tr>
+	<tr>
+		<td class="trai">Email</td>
+		<td><input type="text" id="email"></td>
+		<td id="5"></td>
+	</tr>
+	<tr>
+		<td class="trai">SĐT</td>
+		<td><input type="text" id="sdt"></td>
+		<td id="6"></td>
+	</tr>
+	<tr>
+		<td class="trai">Địa chỉ</td>
+		<td><input type="text"></td>
+		<td id="7"></td>
+	</tr>
+	</table><br>
+	<input type="button" value="Đăng ký" onclick="Check()">
+	<form onsubmit="return checkuser()"></form>
 </div>
 
-
 <script type="text/javascript">
-	function checkuser(){
+	function Check(){
 	var hoten = document.getElementById('ho-ten').value;
 	var tentk = document.getElementById('tai-khoan').value;
 	var matkhau = document.getElementById('mat-khau').value;
+	var repass = document.getElementById('re-pass').value;
+
 	var email = document.getElementById('email').value;
 	var sdt = document.getElementById('sdt').value;
 
-	check_hoten =/^[a-zA-Z]{3,20}$/;
-	check_tentk =/^[a-zA-Z]$/;
-	check_sdt =/^[0-9]{11,12}$/;
-	if (check_hoten.test(hoten)) {
-		alert("OK");
-	} else {
-		alert("Không hợp lệ !!");
+	if(matkhau == ""){
+		document.getElementById('3').innerText='*Không được để trống';
 	}
 
+	if(repass != matkhau){
+		alert("mật khẩu ko khớp");
+	}
+
+	check_hoten =/^[a-zA-Z àáạảãâầấậẩẫăằắặẳẵèéẹẻẽêềếệểễìíịỉĩòóọỏõôồốộổỗơờớợởỡùúụủũưừứựửữỳýỵỷỹđÀÁẠẢÃÂẦẤẬẨẪĂẰẮẶẲẴÈÉẸẺẼÊỀẾỆỂỄÌÍỊỈĨÒÓỌỎÕÔỒỐỘỔỖƠỜỚỢỞỠÙÚỤỦŨƯỪỨỰỬỮỲÝỴỶỸĐD]{3,20}$/;
+	if (!check_hoten.test(hoten)) {
+		return false;
+	}
+	check_user =/^[a-zA-Z]{3,20}$/;
+	if (!check_user.test(tentk)) {
+		return false;
+	}
+
+	alert("dang ky thanh cong");
+	return true;
+	
+	
 }
+
 
 </script>
 </body>
