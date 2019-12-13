@@ -47,7 +47,7 @@
 	</tr>
 	</table><br>
 	<input type="button" value="Đăng ký" onclick="Check()">
-	<form onsubmit="return checkuser()"></form>
+	<form onsubmit="return Check()"></form>
 </div>
 
 <script type="text/javascript">
@@ -74,6 +74,17 @@
 	}
 	check_user =/^[a-zA-Z]{3,20}$/;
 	if (!check_user.test(tentk)) {
+		return false;
+	}
+	check_sdt =/^[0-9]{10,11}$/;
+	if (!check_sdt.test(sdt)) {
+		alert("sai số");
+		return false;
+	}
+
+	check_mail = /^[a-z][a-z0-9_\.]{5,32}@[a-z0-9]{2,}(\.[a-z0-9]{2,4}){1,2}$/;
+	if(!check_mail.test(email)){
+
 		return false;
 	}
 
