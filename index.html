@@ -13,37 +13,35 @@
 	<tr>
 		<td class="trai">Họ tên</td>
 		<td><input type="text" id="ho-ten"></td>
-		<td id="1"></td>
 	</tr>
 	<tr>
 		<td class="trai">Tên tài khoản *</td>
 		<td> <input type="text" id="tai-khoan"></td>
-		<td id="2"></td>
 	</tr>
 	<tr>
 		<td class="trai">Mật khẩu *</td>
 		<td> <input type="password" id="mat-khau"></td>
-		<td id="3"></td>
+		
 	</tr>
 	<tr>
 		<td class="trai">Nhập lại mật khẩu</td>
 		<td><input type="password" id="re-pass"></td>
-		<td id="4"></td>
+	
 	</tr>
 	<tr>
 		<td class="trai">Email</td>
 		<td><input type="text" id="email"></td>
-		<td id="5"></td>
+	
 	</tr>
 	<tr>
 		<td class="trai">SĐT</td>
 		<td><input type="text" id="sdt"></td>
-		<td id="6"></td>
+
 	</tr>
 	<tr>
 		<td class="trai">Địa chỉ</td>
 		<td><input type="text"></td>
-		<td id="7"></td>
+
 	</tr>
 	</table><br>
 	<input type="button" value="Đăng ký" onclick="Check()">
@@ -61,7 +59,8 @@
 	var sdt = document.getElementById('sdt').value;
 
 	if(matkhau == ""){
-		document.getElementById('3').innerText='*Không được để trống';
+		alert("mat khau ko dc để trống")
+		return false;
 	}
 
 	if(repass != matkhau){
